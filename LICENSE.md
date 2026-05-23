@@ -1,4 +1,4 @@
-Personal and Non-Commercial Use License
+Personal and Non-Commercial Use License (not a "proper" license, but I think it gets the point across)
 
 This repository contains hobby scripts for experimenting with local EcoFlow
 PowerStream integration. It is provided for educational, personal, and
