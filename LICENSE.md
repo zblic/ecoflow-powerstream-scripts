@@ -1,25 +1,11 @@
 Personal and Non-Commercial Use License
 
-Copyright (c) 2026 zblic
-
 This repository contains hobby scripts for experimenting with local EcoFlow
 PowerStream integration. It is provided for educational, personal, and
 non-commercial use only.
 
 Permission is granted to use, copy, modify, and adapt the original code in this
-repository for personal, educational, and other non-commercial projects,
-provided that:
-
-1. this license notice is included in copies or substantial portions of the
-   repository or derived work;
-2. attribution to this repository and its author is preserved where reasonably
-   possible;
-3. the software is not sold, offered as a paid product or service, integrated
-   into a commercial product, or otherwise used primarily for commercial gain
-   without prior written permission from the copyright holder;
-4. third-party notices and licenses are preserved.
-
-Commercial use requires prior written permission from the copyright holder.
+repository for personal, educational, and other non-commercial projects.
 
 No warranty and no liability
 
@@ -40,16 +26,18 @@ warranty terms.
 
 Third-party material
 
-Parts of the protocol knowledge used in this project, including EcoFlow
-PowerStream protobuf schemas, field mappings, and command identifiers, are based
-on research and implementation work from the ioBroker EcoFlow MQTT adapter:
+Parts of the protocol knowledge and implementation ideas used in this project,
+including EcoFlow PowerStream protobuf schemas, field mappings, command
+identifiers, and the local MQTT command structure, are based on research and
+implementation work from the following projects:
 
+    tomvd/local-powerstream
     foxthefox/ioBroker.ecoflow-mqtt
 
-That project is licensed under the MIT License. Any portions derived from or
-based on that project remain subject to the original MIT License and attribution
-requirements. This license does not remove or limit any rights granted by
-third-party licenses for third-party material.
+Both projects are licensed under the MIT License. Any portions derived from or
+based on those projects remain subject to the original MIT License and
+attribution requirements. This license does not remove or limit any rights
+granted by third-party licenses for third-party material.
 
 No affiliation
 
