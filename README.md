@@ -17,16 +17,23 @@ In the "send" folder is a simple FastAPI server, which can generate the payloads
 This project is based on my own experiments with local EcoFlow PowerStream MQTT
 communication.
 
-Parts of the protocol knowledge used here, especially the EcoFlow PowerStream
-protobuf schemas, field mappings, and command identifiers, are based on research
-and implementation work from the ioBroker EcoFlow MQTT adapter:
+Parts of the protocol knowledge and implementation ideas used here are based on
+research and implementation work from the following projects:
 
+- `tomvd/local-powerstream`
 - `foxthefox/ioBroker.ecoflow-mqtt`
 
-That project is licensed under the MIT License. The original copyright and
-license notice of that project should be preserved when reusing substantial
-parts derived from it.
+The `tomvd/local-powerstream` project was especially helpful for understanding
+local PowerStream MQTT communication, the protobuf command structure, and the
+command used to set the output power locally.
 
+The `foxthefox/ioBroker.ecoflow-mqtt` project was especially helpful for
+PowerStream protobuf schemas, field mappings, decoded values, scaling factors,
+and command identifiers. You can find more command identifiers to use here too.
+
+Both projects are licensed under the MIT License. Their original copyright and
+license notices should be preserved when reusing substantial parts derived from
+them.
 
 ## License
 
@@ -45,11 +52,7 @@ The scripts can send commands to an EcoFlow PowerStream device. Wrong commands,
 wrong values, software bugs, configuration mistakes, or changes in EcoFlow's
 firmware/protocol may cause unexpected behavior.
 
-The author is not responsible for any damage, data loss, malfunction, device
+I am not responsible for any damage, malfunction, device
 failure, warranty issues, safety issues, incorrect power settings, grid export,
 electrical problems, or any other consequences arising from the
-use or misuse of this software.
-
-You are responsible for understanding what the scripts do before running them
-and for complying with all applicable laws, regulations, electrical safety
-requirements, grid operator rules, and device warranty terms.
+use of these scripts. You should know what these scripts are doing before using them!
