@@ -1,0 +1,387 @@
+syntax = "proto3";
+package pstream;
+
+message Message {
+  repeated Header header = 1;
+  bytes payload = 2;
+}
+
+message Header {
+  optional bytes pdata = 1;
+  optional int32 src = 2;
+  optional int32 dest = 3;
+  optional int32 d_src = 4;
+  optional int32 d_dest = 5;
+  optional int32 enc_type = 6;
+  optional int32 check_type = 7;
+  optional int32 cmd_func = 8;
+  optional int32 cmd_id = 9;
+  optional int32 data_len = 10;
+  optional int32 need_ack = 11;
+  optional int32 is_ack = 12;
+  optional int32 seq = 14;
+  optional int32 product_id = 15;
+  optional int32 version = 16;
+  optional int32 payload_ver = 17;
+  optional int32 time_snap = 18;
+  optional int32 is_rw_cmd = 19;
+  optional int32 is_queue = 20;
+  optional int32 ack_type = 21;
+  optional string code = 22;
+  optional string from = 23;
+  optional string module_sn = 24;
+  optional string device_sn = 25;
+}
+
+message inverter_heartbeat {
+    optional uint32 invErrCode = 1;
+    optional uint32 invWarnCode = 3;
+    optional uint32 pv1ErrCode = 2;
+    optional uint32 pv1WarnCode = 4;
+    optional uint32 pv2ErrCode = 5;
+    optional uint32 pv2WarningCode = 6;
+    optional uint32 batErrCode = 7;
+    optional uint32 batWarningCode = 8;
+    optional uint32 llcErrCode = 9;
+    optional uint32 llcWarningCode = 10;
+    optional uint32 pv1Status = 11;
+    optional uint32 pv2Status = 12;
+    optional uint32 batStatus = 13;
+    optional uint32 llcStatus = 14;
+    optional uint32 invStatus = 15;
+    optional int32 pv1InputVolt = 16;
+    optional int32 pv1OpVolt = 17;
+    optional int32 pv1InputCur = 18;
+    optional int32 pv1InputWatts = 19;
+    optional int32 pv1Temp = 20;
+    optional int32 pv2InputVolt = 21;
+    optional int32 pv2OpVolt = 22;
+    optional int32 pv2InputCur = 23;
+    optional int32 pv2InputWatts = 24;
+    optional int32 pv2Temp = 25;
+    optional int32 batInputVolt = 26;
+    optional int32 batOpVolt = 27;
+    optional int32 batInputCur = 28;
+    optional int32 batInputWatts = 29;
+    optional int32 batTemp = 30;
+    optional uint32 batSoc = 31;
+    optional int32 llcInputVolt = 32;
+    optional int32 llcOpVolt = 33;
+    optional int32 llcTemp = 34;
+    optional int32 invInputVolt = 35;
+    optional int32 invOpVolt = 36;
+    optional int32 invOutputCur = 37;
+    optional int32 invOutputWatts = 38;
+    optional int32 invTemp = 39;
+    optional int32 invFreq = 40;
+    optional int32 invDcCur = 41;
+    optional int32 bpType = 42;
+    optional int32 invRelayStatus = 43;
+    optional int32 pv1RelayStatus = 44;
+    optional int32 pv2RelayStatus = 45;
+    optional uint32 installCountry = 46;
+    optional uint32 installTown = 47;
+    optional uint32 permanentWatts = 48;
+    optional uint32 dynamicWatts = 49;
+    optional uint32 supplyPriority = 50;
+    optional uint32 lowerLimit = 51;
+    optional uint32 upperLimit = 52;
+    optional uint32 invOnOff = 53;
+    optional uint32 wirelessErrCode = 54;
+    optional uint32 wirelessWarnCode = 55;
+    optional uint32 invBrightness = 56;
+    optional uint32 heartbeatFrequency = 57;
+    optional uint32 ratedPower = 58;
+    optional int32 batChargingTime = 59;
+    optional int32 batDischargingTime = 60;
+    optional int32 feedPriority = 61;
+    optional int32 pv_to_inv_watts = 62;
+    optional int32 grid_cons_watts = 63;
+    optional int32 plug_total_watts = 64;
+    optional int32 inv_to_plug_watts = 65;
+    optional int32 space_demand_watts = 66;
+    optional int32 inv_demand_watts = 67;
+    optional uint32 interface_conn_flag = 68;
+    optional uint32 pv1_ctrl_mppt_off_flag = 69;
+    optional uint32 pv2_ctrl_mppt_off_flag = 70;
+    optional uint32 bat_off_flag = 71;
+    optional uint32 llc_off_flag = 72;
+    optional uint32 ac_off_flag = 73;
+    optional uint32 bms_req_chg_vol = 74;
+    optional uint32 bms_req_chg_amp = 75;
+    optional uint32 uwload_limit_flag = 76;
+    optional uint32 inv_load_limit_flag = 77;
+    optional uint32 bat_load_limit_flag = 78;
+    optional uint32 anti_back_flow_flag = 79;
+    optional uint32 uwsoc_flag = 80;
+    optional uint32 uwlow_light_flag = 81;
+    optional uint32 inv_to_other_watts = 82;
+    optional int32 wifi_rssi = 83;
+    optional uint32 bat_system = 84;
+    optional uint32 fload_limit_out = 85;
+    optional uint32 inv_output_load_limit = 86;
+    optional uint32 bat_output_load_limit = 87;
+    optional uint32 pv_power_limit_ac_power = 98;
+    optional uint32 bat_error_inv_load_limit = 99;
+    optional uint32 reset_reason = 100;
+    optional uint32 reset_count = 101;
+    optional uint32 mesh_id = 102;
+    optional uint32 mesh_layel = 103;
+    optional uint32 self_mac = 104;
+    optional uint32 parent_mac = 105;
+    optional int32 sta_ip_addr = 106;
+    optional int32 gene_num = 107;
+    optional int32 cons_num = 108;
+    optional int32 gene_watt = 109;
+    optional int32 cons_watt = 110;
+    optional int32 wifi_err = 111;
+    optional int32 wifi_err_time = 112;
+    optional int32 mqtt_err = 113;
+    optional int32 mqtt_err_time = 114;
+    optional uint32 stack_free = 115;
+    optional uint32 stack_min_free = 116;
+    optional uint32 mqtt_tls_last_err = 117;
+    optional uint32 mqtt_tls_stack_err = 118;
+    optional uint32 mqtt_sock_errno = 119;
+    optional uint32 ac_set_watts = 120;
+    optional uint32 mqtt_last_dis_reason = 121;
+    optional uint32 mqtt_connect_return_code = 122;
+    optional uint32 wifi_firmware_version = 123;
+    optional uint32 wifi_connect_channel = 124;
+    optional uint32 wifi_encrypt_mode = 125;
+    optional float fiso_rxyz = 126;
+    optional int32 history_pv_to_inv_watts = 127;
+    optional int32 history_bat_input_watts = 128;
+    optional int32 history_inv_output_watts = 129;
+    optional int32 history_grid_cons_watts = 130;
+    optional int32 history_plug_total_watts = 131;
+    optional int32 history_inv_to_plug_watts = 132;
+    optional uint32 history_permanent_watts = 133;
+    optional int32 esp_tempsensor = 134;
+    optional uint32 noise_floor = 135;
+    optional int32 rssi_threshold = 136;
+    optional int32 rssi_variance = 137;
+}
+message InverterHeartbeat2 {
+    optional int32 pv1_active_1 = 1;
+    optional int32 pv1_status_2 = 2;
+    optional int32 pv2_active_3 = 3;
+    optional int32 pv2_status_4 = 4;
+    optional int32 X_Unknown_5 = 5;
+    optional int32 status_6 = 6;
+    optional int32 upperLimit = 7;
+    optional int32 lowerLimit = 8;
+    optional int32 status_9 = 9;
+    optional int32 status_10 = 10;
+    optional int32 X_Unknown_11 = 11;
+    optional int32 baseLoad = 12;
+    optional int32 powerPlugsPos = 13;
+    optional int32 X_Unknown_14 = 14;
+    optional int32 X_Unknown_15 = 15;
+    optional int32 X_Unknown_16 = 16;
+    optional int32 X_Unknown_17 = 17;
+    optional int32 X_Unknown_18 = 18;
+    optional int32 X_Unknown_19 = 19;
+    optional int32 X_Unknown_20 = 20;
+    optional int32 X_Unknown_21 = 21;
+    optional int32 X_Unknown_22 = 22;
+    optional int32 X_Unknown_23 = 23;
+    optional int32 X_Unknown_24 = 24;
+    optional int32 X_Unknown_25 = 25;
+    optional int32 X_Unknown_26 = 26;
+    optional int32 X_Unknown_27 = 27;
+    optional int32 X_Unknown_28 = 28;
+    optional int32 X_Unknown_29 = 29;
+    optional int32 X_Unknown_30 = 30;
+    optional int32 X_Unknown_31 = 31;
+    optional int32 uptime = 32;
+    optional int32 X_Unknown_33 = 33;
+    optional int32 X_Unknown_34 = 34;
+    optional int32 X_Unknown_35 = 35;
+    optional int32 X_Unknown_36 = 36;
+    optional int32 X_Unknown_37 = 37;
+    optional int32 X_Unknown_38 = 38;
+    optional int32 X_Unknown_39 = 39;
+    optional int32 X_Unknown_40 = 40;
+    optional int32 X_Unknown_41 = 41;
+    optional int32 X_Unknown_42 = 42;
+    optional int32 X_Unknown_43 = 43;
+    optional int32 plugsConn_44 = 44;
+    optional int32 gridWatt_45 = 45;
+    optional int32 powerPlugsNeg = 46;
+    optional int32 X_Unknown_47 = 47;
+    optional int32 unixtime_48 = 48;
+    optional int32 X_Unknown_49 = 49;
+    optional int32 unixtime_50 = 50;
+    optional int32 X_Unknown_51 = 51;
+    optional int32 wifiRssi = 52;
+}
+message rated_power_pack
+{
+    optional uint32 rated_power = 1;
+}
+message permanent_watts_pack
+{
+    optional uint32 permanent_watts = 1;
+}
+message supply_priority_pack
+{
+    optional uint32 supply_priority = 1;
+}
+message feed_priority_pack
+{
+    optional uint32 feedPriority = 1;
+}
+message bat_lower_pack
+{
+    optional int32 lower_limit = 1;
+}
+message bat_upper_pack
+{
+    optional int32 upper_limit = 1;
+}
+message brightness_pack
+{
+    optional int32 invBrightness = 1;
+}
+message powerItem
+{
+    optional uint32 timestamp = 1;
+    optional sint32 timezone = 2;
+    optional uint32 inv_to_grid_power = 3;
+    optional uint32 inv_to_plug_power = 4;
+    optional int32 battery_power = 5;
+    optional uint32 pv1_output_power = 6;
+    optional uint32 pv2_output_power = 7;
+}
+message PowerPack
+{
+    optional uint32 sys_seg = 1;
+    repeated powerItem sys_power_stream = 2;
+}
+message EnergyItem
+{
+    optional uint32 timestamp = 1;
+    optional uint32 watth_type = 2;
+    repeated uint32 watth = 3;
+}
+message EnergyPack
+{
+    optional uint32 sys_seq = 1;
+    repeated EnergyItem sys_energy_stream = 2;
+}
+message EnergyTotalReport
+{
+    optional uint32 watth_seq = 1;
+    optional EnergyItem watth_item = 2;
+}
+message BatchEnergyTotalReport
+{
+    optional uint32 watth_seq = 1;
+    repeated EnergyItem watth_item = 2;
+}
+message EnergyTotalReportAck
+{
+    optional uint32 result = 1;
+    optional uint32 watth_seq = 2;
+    optional uint32 watth_type = 3;
+}
+message PowerAckPack
+{
+    optional uint32 sys_seq = 1;
+}
+message node_massage
+{
+    optional string sn = 1;
+    optional bytes mac = 2;
+}
+message mesh_child_node_info
+{
+    optional uint32 topology_type = 1;
+    optional uint32 mesh_protocol = 2;
+    optional uint32 max_sub_device_num = 3;
+    optional bytes parent_mac_id = 4;
+    optional bytes mesh_id = 5;
+    repeated node_massage sub_device_list = 6;
+}
+message country_town_message {
+    optional uint32 country = 1;
+    optional uint32 town = 2;
+}
+message time_task_config {
+    optional uint32 task_index = 1;
+    optional time_range_strategy time_range = 2;
+    optional uint32 type = 3;
+}
+message time_task_delet {
+    optional uint32 task_index = 1;
+}
+message time_task_config_post {
+    optional time_task_config task1 = 1;
+    optional time_task_config task2 = 2;
+    optional time_task_config task3 = 3;
+    optional time_task_config task4 = 4;
+    optional time_task_config task5 = 5;
+    optional time_task_config task6 = 6;
+    optional time_task_config task7 = 7;
+    optional time_task_config task8 = 8;
+    optional time_task_config task9 = 9;
+    optional time_task_config task10 = 10;
+    optional time_task_config task11 = 11;
+}
+message time_task_config_ack {
+    optional uint32 task_info = 1;
+}
+message time_range_strategy {
+    optional bool is_config = 1;
+    optional bool is_enable = 2;
+    optional int32 time_mode = 3;
+    optional int32 time_data = 4;
+    optional rtc_data start_time = 5;
+    optional rtc_data stop_time = 6;
+}
+message rtc_data {
+    optional int32 week = 1;
+    optional int32 sec = 2;
+    optional int32 min = 3;
+    optional int32 hour = 4;
+    optional int32 day = 5;
+    optional int32 month = 6;
+    optional int32 year = 7;
+}
+message plug_ack_message {
+    optional uint32 ack = 1;
+}
+message setMessage {
+  setHeader header = 1;
+}
+message setHeader {
+    setValue pdata = 1;
+    int32 src = 2;
+    int32 dest = 3;
+    int32 d_src = 4;
+    int32 d_dest = 5;
+    int32 enc_type = 6;
+    int32 check_type = 7;
+    int32 cmd_func = 8;
+    int32 cmd_id = 9;
+    int32 data_len = 10;
+    int32 need_ack = 11;
+    int32 is_ack = 12;
+    int32 seq = 14;
+    int32 product_id = 15;
+    int32 version = 16;
+    int32 payload_ver = 17;
+    int32 time_snap = 18;
+    int32 is_rw_cmd = 19;
+    int32 is_queue = 20;
+    int32 ack_type = 21;
+    string code = 22;
+    string from = 23;
+    string module_sn = 24;
+    string device_sn = 25;
+}
+message setValue {
+    optional int32 value = 1;
+    optional int32 value2 = 2;
+}

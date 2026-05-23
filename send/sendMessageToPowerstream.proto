@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+message setValue { optional int32 value = 1; optional int32 value2 = 2; };
+message setHeader {
+  optional setValue 	pdata	    = 1;
+  optional int32 	src	    = 2;
+  optional int32		dest 	    = 3;
+  optional int32		d_src	    = 4;
+  optional int32		d_dest	    = 5;
+  optional int32		check_type  = 7;
+  optional int32		cmd_func    = 8;
+  optional int32		cmd_id      = 9;
+  optional int32		data_len    = 10;
+  optional int32		need_ack    = 11;
+  optional int32		seq	    = 14;
+  optional int32		version     = 16;
+  optional int32		payload_ver = 17;
+  optional string	from	    = 23;
+  optional string	device_sn   = 25;
+}
+
+message setMessage { optional setHeader header = 1; }
